@@ -1,13 +1,14 @@
 package com.github.ptlthg.authtester;
 
-import net.minecraft.init.Blocks;
+import com.github.ptlthg.authtester.commands.TestAuthCommand;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 @Mod(modid = "authtester", useMetadata=true)
-public class ExampleMod {
+public class AuthTester {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        System.out.println("Dirt: " + Blocks.dirt.getUnlocalizedName());
+        ClientCommandHandler.instance.registerCommand(new TestAuthCommand());
     }
 }
